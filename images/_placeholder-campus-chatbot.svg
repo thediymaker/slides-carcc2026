@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="760" viewBox="0 0 1280 760" font-family="'Segoe UI',Arial,sans-serif">
+  <rect width="1280" height="760" fill="#0c0e14"/>
+  <rect x="24" y="24" width="1232" height="712" rx="16" fill="none" stroke="#6366f1" stroke-opacity="0.55" stroke-width="3" stroke-dasharray="14 10"/>
+  <text x="640" y="340" text-anchor="middle" fill="#2dd4bf" font-size="44" font-weight="700" letter-spacing="2">CAMPUS CHATBOT SCREENSHOT</text>
+  <text x="640" y="400" text-anchor="middle" fill="#8b93a7" font-size="26">Institutional chat UI and/or Slurm Chat on local endpoints</text>
+  <text x="640" y="460" text-anchor="middle" fill="#5b6377" font-size="22" font-family="'Consolas',monospace">replace: images/campus-chatbot.png  &#183;  ~1280x760</text>
+</svg>

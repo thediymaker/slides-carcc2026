@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" font-family="'Space Grotesk','Segoe UI',Arial,sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a0c12"/>
+      <stop offset="1" stop-color="#07080c"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2dd4bf"/>
+      <stop offset="1" stop-color="#6366f1"/>
+    </linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2dd4bf"/>
+    </marker>
+    <style>
+      .lbl   { fill:#eef1f7; font-size:21px; font-weight:600; }
+      .sub   { fill:#8b93a7; font-size:14px; font-weight:400; }
+      .tag   { fill:#2dd4bf; font-size:12px; font-weight:600; letter-spacing:1.5px; font-family:'JetBrains Mono',monospace; }
+      .flow  { stroke:#2dd4bf; stroke-width:2.5; fill:none; opacity:.85; }
+      .side  { stroke:#6366f1; stroke-width:2; fill:none; stroke-dasharray:6 6; opacity:.7; }
+      .card  { fill:#11141d; stroke:rgba(255,255,255,0.08); stroke-width:1.5; }
+      .glow  { fill:#11141d; stroke:url(#accent); stroke-width:2.5; }
+    </style>
+  </defs>
+
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <rect x="0" y="0" width="1280" height="6" fill="url(#accent)"/>
+
+  <!-- Title -->
+  <text x="60" y="64" class="lbl" font-size="30" font-weight="700">Request Path and Architecture</text>
+  <text x="60" y="92" class="sub" font-size="16">Self-hosted inference on k3s + Rancher across ~200 Gaudi2 nodes</text>
+
+  <!-- ===== Clients ===== -->
+  <text x="60" y="150" class="tag">CLIENTS</text>
+  <rect x="48" y="166" width="208" height="300" rx="14" class="card"/>
+  <rect x="68" y="190" width="168" height="56" rx="9" fill="#161a25"/>
+  <text x="152" y="216" text-anchor="middle" class="lbl" font-size="17">Campus Chatbot</text>
+  <text x="152" y="236" text-anchor="middle" class="sub">institutional chat UI</text>
+  <rect x="68" y="258" width="168" height="56" rx="9" fill="#161a25"/>
+  <text x="152" y="284" text-anchor="middle" class="lbl" font-size="17">IDE Assistants</text>
+  <text x="152" y="304" text-anchor="middle" class="sub">code completion</text>
+  <rect x="68" y="326" width="168" height="56" rx="9" fill="#161a25"/>
+  <text x="152" y="352" text-anchor="middle" class="lbl" font-size="17">Slurm Chat</text>
+  <text x="152" y="372" text-anchor="middle" class="sub">HPC doc assistant</text>
+  <rect x="68" y="394" width="168" height="56" rx="9" fill="#161a25"/>
+  <text x="152" y="420" text-anchor="middle" class="lbl" font-size="17">OpenAI SDKs</text>
+  <text x="152" y="440" text-anchor="middle" class="sub">research workflows</text>
+
+  <!-- ===== HAProxy ===== -->
+  <text x="320" y="150" class="tag">INGRESS</text>
+  <rect x="308" y="246" width="150" height="140" rx="14" class="card"/>
+  <text x="383" y="306" text-anchor="middle" class="lbl">HAProxy</text>
+  <text x="383" y="330" text-anchor="middle" class="sub">SSL termination</text>
+  <text x="383" y="350" text-anchor="middle" class="sub">routing</text>
+
+  <!-- ===== Gateway / Admission ===== -->
+  <text x="522" y="150" class="tag">ADMISSION GATEWAY</text>
+  <rect x="510" y="170" width="232" height="292" rx="14" class="glow"/>
+  <rect x="532" y="192" width="188" height="120" rx="10" fill="#161a25"/>
+  <text x="626" y="222" text-anchor="middle" class="lbl" font-size="19">Obleth</text>
+  <text x="626" y="244" text-anchor="middle" class="sub">weighted fairshare</text>
+  <text x="626" y="263" text-anchor="middle" class="sub">token-measured admission</text>
+  <text x="626" y="282" text-anchor="middle" class="sub">usage ledger</text>
+  <text x="626" y="301" text-anchor="middle" class="tag" font-size="11">IN DEVELOPMENT</text>
+  <rect x="532" y="324" width="188" height="116" rx="10" fill="#161a25"/>
+  <text x="626" y="354" text-anchor="middle" class="lbl" font-size="19">LiteLLM</text>
+  <text x="626" y="376" text-anchor="middle" class="sub">OpenAI-compatible API</text>
+  <text x="626" y="395" text-anchor="middle" class="sub">key auth &#183; model routing</text>
+  <text x="626" y="414" text-anchor="middle" class="tag" font-size="11">IN PRODUCTION</text>
+
+  <!-- ===== Aibrix ===== -->
+  <text x="806" y="150" class="tag">ROUTING</text>
+  <rect x="794" y="246" width="150" height="140" rx="14" class="card"/>
+  <text x="869" y="300" text-anchor="middle" class="lbl">Aibrix</text>
+  <text x="869" y="324" text-anchor="middle" class="sub">replica / pod</text>
+  <text x="869" y="344" text-anchor="middle" class="sub">selection</text>
+
+  <!-- ===== vLLM pods ===== -->
+  <text x="1000" y="150" class="tag">MODEL PODS &#183; vLLM ON HPU</text>
+  <rect x="988" y="166" width="244" height="300" rx="14" class="card"/>
+  <rect x="1008" y="190" width="204" height="56" rx="9" fill="#161a25"/>
+  <text x="1110" y="216" text-anchor="middle" class="lbl" font-size="17">Llama</text>
+  <text x="1110" y="236" text-anchor="middle" class="sub">vLLM &#183; Gaudi2</text>
+  <rect x="1008" y="258" width="204" height="56" rx="9" fill="#161a25"/>
+  <text x="1110" y="284" text-anchor="middle" class="lbl" font-size="17">Gemma</text>
+  <text x="1110" y="304" text-anchor="middle" class="sub">vLLM &#183; Gaudi2</text>
+  <rect x="1008" y="326" width="204" height="56" rx="9" fill="#161a25"/>
+  <text x="1110" y="352" text-anchor="middle" class="lbl" font-size="17">Qwen</text>
+  <text x="1110" y="372" text-anchor="middle" class="sub">vLLM &#183; Gaudi2</text>
+  <rect x="1008" y="394" width="204" height="56" rx="9" fill="#161a25"/>
+  <text x="1110" y="420" text-anchor="middle" class="lbl" font-size="17">Embeddings / VL</text>
+  <text x="1110" y="440" text-anchor="middle" class="sub">vLLM &#183; Gaudi2</text>
+
+  <!-- ===== Flow arrows ===== -->
+  <path class="flow" d="M256,316 L308,316" marker-end="url(#arrow)"/>
+  <path class="flow" d="M458,316 L510,316" marker-end="url(#arrow)"/>
+  <path class="flow" d="M742,316 L794,316" marker-end="url(#arrow)"/>
+  <path class="flow" d="M944,316 L988,316" marker-end="url(#arrow)"/>
+
+  <!-- ===== State stores ===== -->
+  <text x="60" y="600" class="tag">STATE &amp; CONTROL</text>
+  <rect x="308" y="556" width="150" height="86" rx="12" class="card"/>
+  <text x="383" y="596" text-anchor="middle" class="lbl" font-size="16">Account Portal</text>
+  <text x="383" y="616" text-anchor="middle" class="sub">keys &#183; usage</text>
+  <rect x="510" y="556" width="110" height="86" rx="12" class="card"/>
+  <text x="565" y="596" text-anchor="middle" class="lbl" font-size="16">CNPG</text>
+  <text x="565" y="616" text-anchor="middle" class="sub">Postgres HA</text>
+  <rect x="632" y="556" width="110" height="86" rx="12" class="card"/>
+  <text x="687" y="596" text-anchor="middle" class="lbl" font-size="16">Redis</text>
+  <text x="687" y="616" text-anchor="middle" class="sub">token buckets</text>
+
+  <!-- side links: stores up to gateway bottom edge (no crossing) -->
+  <path class="side" d="M383,556 L383,505 L520,505 L520,462"/>
+  <path class="side" d="M565,556 L565,462"/>
+  <path class="side" d="M687,556 L687,462"/>
+
+  <!-- platform footer band -->
+  <rect x="48" y="668" width="1184" height="34" rx="10" fill="#0e1119" stroke="rgba(255,255,255,0.06)"/>
+  <text x="640" y="690" text-anchor="middle" class="sub" font-size="14" font-family="'JetBrains Mono',monospace">PLATFORM:  k3s + Rancher  &#183;  Habana device plugin  &#183;  100GbE scale-out  &#183;  ~200 Gaudi2 nodes</text>
+</svg>

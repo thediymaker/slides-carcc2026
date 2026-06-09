@@ -1,0 +1,21 @@
+{
+  "name": "carcc2026-slides",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Marp deck: Deploying Intel Gaudi2 for Campus-Scale AI Services",
+  "scripts": {
+    "build": "marp slides.md -o slides.html --allow-local-files",
+    "pdf": "marp slides.md --pdf -o dist/slides.pdf --allow-local-files",
+    "pptx": "marp slides.md --pptx -o dist/slides.pptx --allow-local-files",
+    "png": "marp slides.md --images png -o dist/slide.png --allow-local-files",
+    "images": "node tools/render-images.js",
+    "watch": "marp -w slides.md -o slides.html --allow-local-files",
+    "serve": "marp -s . --allow-local-files"
+  },
+  "devDependencies": {
+    "@marp-team/marp-cli": "^4.0.0"
+  },
+  "dependencies": {
+    "sharp": "^0.34.5"
+  }
+}

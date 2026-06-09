@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="620" height="900" viewBox="0 0 620 900" font-family="'Segoe UI',Arial,sans-serif">
+  <rect width="620" height="900" fill="#07080c"/>
+  <rect x="28" y="28" width="564" height="844" rx="18" fill="none" stroke="#6366f1" stroke-opacity="0.55" stroke-width="3" stroke-dasharray="14 10"/>
+  <text x="310" y="430" text-anchor="middle" fill="#2dd4bf" font-size="38" font-weight="700" letter-spacing="2">GAUDI2 PHOTO</text>
+  <text x="310" y="478" text-anchor="middle" fill="#8b93a7" font-size="22">Node, HPU card,</text>
+  <text x="310" y="508" text-anchor="middle" fill="#8b93a7" font-size="22">or rack close-up</text>
+  <text x="310" y="572" text-anchor="middle" fill="#5b6377" font-size="16" font-family="'Consolas',monospace">replace: images/gaudi2-node.png</text>
+  <text x="310" y="598" text-anchor="middle" fill="#5b6377" font-size="16" font-family="'Consolas',monospace">portrait ~620x900</text>
+</svg>
