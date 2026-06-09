@@ -233,7 +233,7 @@ persistent, multi-tenant service with predictable capacity and accounting.
 | **Inference** | vLLM (Habana-optimized) model pods, one deployment per architecture |
 | **API Gateway** | **LiteLLM**: OpenAI-compatible surface, key auth, model routing |
 | **Ingress** | **HAProxy**: SSL termination and routing for chat and IDE traffic |
-| **State / Metadata** | **CloudNativePG (CNPG)**: Postgres operator for HA databases |
+| **State / Metadata** | **CloudNativePG (CNPG)**: Postgres operator for HA databases, backed up to **S3** |
 | **Accounts & Keys** | In-house provisioning portal for self-service keys and usage |
 
 > Warewulf images make nodes disposable; Longhorn keeps persistent data on the NVMe that is already in each box, so we add no external storage tier.
