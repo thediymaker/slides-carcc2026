@@ -64,7 +64,8 @@ style: |
   li { margin-bottom: 6px; }
   li::marker { color: var(--accent); }
   /* Tables: sleek panel cards, high contrast */
-  table {
+  section table {
+    display: table;
     font-size: 21px;
     border-collapse: separate;
     border-spacing: 0;
