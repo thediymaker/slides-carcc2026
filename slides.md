@@ -260,7 +260,7 @@ onboarding does not require operator intervention.
 - **Usage visibility:** Each user sees their own token consumption and request history.
 - **Model inventory:** Active endpoints, context limits, and hardware requirements are surfaced per account.
 
-> This is the layer that turns a shared GPU cluster into a managed internal API with attribution per user.
+> Without this layer, access is a handful of shared admin keys. With it, every key maps to a named user, so usage and limits are per person.
 
 ---
 
