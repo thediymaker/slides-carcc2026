@@ -228,13 +228,15 @@ persistent, multi-tenant service with predictable capacity and accounting.
 | Layer | What We Run |
 | --- | --- |
 | **Orchestration** | Kubernetes via **k3s + Rancher** across ~**200 Gaudi2 nodes** |
+| **Node Images** | **Warewulf**-provisioned, so a node rebuilds to a known image |
+| **Storage** | **Longhorn** PVCs on each node's local **7 TB NVMe** |
 | **Inference** | vLLM (Habana-optimized) model pods, one deployment per architecture |
 | **API Gateway** | **LiteLLM**: OpenAI-compatible surface, key auth, model routing |
 | **Ingress** | **HAProxy**: SSL termination and routing for chat and IDE traffic |
 | **State / Metadata** | **CloudNativePG (CNPG)**: Postgres operator for HA databases |
 | **Accounts & Keys** | In-house provisioning portal for self-service keys and usage |
 
-> k3s + Rancher keeps the control plane light and the fleet declarative, which matters when nodes need frequent driver and firmware work.
+> Warewulf images make nodes disposable; Longhorn keeps persistent data on the NVMe that is already in each box, so we add no external storage tier.
 
 ---
 
