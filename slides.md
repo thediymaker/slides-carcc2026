@@ -397,7 +397,7 @@ and the vLLM/Aibrix backends and owns the admission layer LiteLLM omits.
 | Weighted fairshare under saturation | no | yes |
 | Queue instead of immediate 429 | beta, priority-only | yes, fairshare |
 | Live priority change (no restart) | no | yes |
-| Replica/pod routing | no | delegates to Aibrix |
+| Burst above share when idle | no, static cap | yes, reclaimed on contention |
 
 - **OpenAI-compatible:** existing SDKs work by changing base URL and key. Chat, embeddings, images, audio, and MCP share one surface.
 - **Self-hosted:** a single Rust binary, source-available under Elastic License 2.0, with no license fee. Limits are hardware and quota.
