@@ -286,7 +286,7 @@ that model on every axis, which is the reason the rest of this stack exists.
 | **Scheduler owns fairness** between queued jobs. | **No scheduler in the path:** a live request needs admission control instead. |
 | **Success = job completes.** | **Success = low latency** under constant concurrent load. |
 
-> Slurm is still right for finite research runs. But a 24/7, multi-tenant endpoint needs Kubernetes, a gateway, and per-user accounting, things the batch scheduler never provided. That gap is what we built.
+> Slurm still fits finite research runs. A 24/7 multi-tenant endpoint needs Kubernetes, a gateway, and per-user accounting instead of a batch queue, which is what the rest of this stack provides.
 
 ---
 
@@ -302,7 +302,7 @@ software lagged well behind the hardware.
 - **Recent viability:** Only recently has the surrounding software matured enough to treat Gaudi2 as a dependable serving target.
 - **Tradeoff:** Large aggregate HBM per node and native 100GbE scale-out, once the stack is in place.
 
-> We were handed Gaudi2 and made it work. This stack doesnt care what is underneath it. Anyone starting on NVIDIA today is simply much further ahead on day one.
+> We were handed Gaudi2 and made it work. The stack above it no longer depends on the accelerator, though a team starting on NVIDIA today has a far easier first day.
 
 ---
 
@@ -316,7 +316,7 @@ It is "what is the fleet doing right now." We watch three layers live.
 - **Rancher control plane:** ~60 vLLM deployments managed declaratively, with rollout state, replica health, and image versions visible in one place.
 - **Capacity decisions:** these views drive what we scale, drain, and reschedule rather than guessing from job logs.
 
-> A batch scheduler reports completion. A persistent service has none, so these dashboards are how we know it is healthy.
+> A batch job ends with an exit code. A persistent service has no such signal, so these dashboards are how we see that it is healthy.
 
 ---
 
@@ -417,7 +417,7 @@ teams build on top of.
 - **Slurm Chat and similar tools:** natural-language assistants for HPC documentation and cluster configuration run directly against our models.
 - **Integrated assistants:** coding helpers and research workflows use the same OpenAI-compatible API.
 
-> Removing per-call cost changes behavior. Teams stop rationing inference and start integrating it into normal workflows.
+> Removing per-call cost changes how teams use inference: they integrate it into normal workflows rather than rationing it per request.
 
 ---
 
