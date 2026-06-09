@@ -22,25 +22,6 @@ Press `F` for fullscreen and `P` for presenter view.
 - **Real-time observability** — live node grid, per-model inference telemetry, and the Rancher control plane across ~200 nodes.
 - **Where LiteLLM stops and Obleth begins** — token-measured, weighted fairshare admission for a saturated, self-hosted cluster.
 
-## Repository layout
-
-- [slides.md](slides.md) — the talk source.
-- `images/` — diagrams and dashboard screenshots used in the deck.
-- `tools/render-images.js` — rasterizes the SVG architecture diagram to PNG.
-- `.github/workflows/deploy.yml` — builds and publishes the deck to GitHub Pages on every push to `main`.
-
-## Building locally
-
-The published site rebuilds automatically on push, but to preview or export locally:
-
-```powershell
-npm install
-npm run build      # -> slides.html (open it next to the images/ folder)
-npm run pdf        # -> dist/slides.pdf
-npm run pptx       # -> dist/slides.pptx
-npm run serve      # live server with presenter view
-```
-
 ## Links
 
 - Obleth fairshare gateway: https://obleth.com
